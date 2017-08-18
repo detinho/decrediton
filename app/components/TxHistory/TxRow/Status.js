@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import "../../../style/TxHistory.less";
 
 const Status = ({ accountName, pending, date }) => (
@@ -7,9 +8,13 @@ const Status = ({ accountName, pending, date }) => (
       <div className="transaction-account-name">{accountName}</div>
       <div className="transaction-account-indicator">
         {pending ? (
-          <div className="indicator-pending">Pending</div>
+          <div className="indicator-pending">
+            <FormattedMessage id="pending" defaultMessage="Pending" />
+          </div>
         ) : (
-          <div className="indicator-confirmed">Confirmed</div>
+          <div className="indicator-confirmed">
+            <FormattedMessage id="confirmed" defaultMessage="Confirmed" />
+          </div>
         )}
       </div>
     </div>

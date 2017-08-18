@@ -50,7 +50,7 @@ export const ReceiveStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   center: {
     textAlign: "center",
@@ -270,13 +270,13 @@ export const SendStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   contentBlur: {
     filter: "blur(6px)",
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   sendSend: {
     paddingTop: "1px",
@@ -719,7 +719,7 @@ export const HomeStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   rescanProgressArea: {
     fontSize: "16px",
@@ -837,7 +837,7 @@ export const HistoryStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   contentTitle: {
     display: "block",
@@ -945,13 +945,13 @@ export const SettingStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   contentBlur: {
     filter: "blur(6px)",
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   saveSettingsButton: {
     float: "right",
@@ -1088,13 +1088,13 @@ export const StakePoolStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   contentBlur: {
     filter: "blur(6px)",
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   contentVotingGui: {
     overflow: "auto",
@@ -2399,7 +2399,7 @@ export const HelpStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   img: {
     width: "250px",
@@ -2426,7 +2426,7 @@ export const TxDetailsStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   headerTop: {
     height: "106px",
@@ -2727,7 +2727,7 @@ export const GetStartedStyles = {
   content: {
     overflow: "auto",
     height: "556px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   contentTitle: {
     display: "block",
@@ -2926,7 +2926,7 @@ export const AccountStyles = {
   content: {
     overflowY: "scroll",
     height: "512px",
-    padding: "54px 60px 54px 80px",
+    padding: "54px 54px 54px 60px",
   },
   contentTitle: {
     display: "block",

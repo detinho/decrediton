@@ -8,6 +8,8 @@ import injectTapEventPlugin from "react-tap-event-plugin";
 import routes from "./routes";
 import configureStore from "./store/configureStore";
 import { getCfg } from "./config.js";
+import { IntlProvider } from 'react-intl';
+import { getMessages } from "./i18n/i18n";
 
 var cfg = getCfg();
 
@@ -52,10 +54,12 @@ var initialState = {
     currentSettings: {
       currencyDisplay: cfg.get("currency_display"),
       network: cfg.get("network"),
+      locale: cfg.get("locale")
     },
     tempSettings: {
       currencyDisplay: cfg.get("currency_display"),
       network: cfg.get("network"),
+      locale: cfg.get("locale")
     },
     settingsChanged: false,
   },
@@ -306,9 +310,14 @@ injectTapEventPlugin();
 const store = configureStore(initialState);
 const history = syncHistoryWithStore(hashHistory, store);
 
+const locale = store.getState().settings.currentSettings.locale;
+
 render(
-  <Provider store={store}>
-    <Router history={history} routes={routes} />
-  </Provider>,
+  <IntlProvider locale={locale} 
+  messages={getMessages(locale)}>
+    <Provider store={store}>
+      <Router history={history} routes={routes} />
+    </Provider>
+  </IntlProvider>,
   document.getElementById("root")
 );

@@ -4,13 +4,14 @@ import Radium from "radium";
 import { reverseHash } from "../../helpers/byteActions";
 import Balance from "../Balance";
 import Header from "../Header";
-import dateFormat from "dateformat";
 import "../fonts.css";
 import { shell } from "electron";
 import SlateGrayButton from "../SlateGrayButton";
 import { TxDetailsStyles } from "./ViewStyles";
 import { TransactionDetails }  from "../../middleware/walletrpc/api_pb";
 import { addSpacingAroundText } from "../../helpers/strings";
+import { injectIntl } from "react-intl";
+import { formatTxDate } from "../../helpers/dateFormat";
 
 class TxDetails extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class TxDetails extends Component {
     var credits = tx.tx.getCreditsList();
     var debits = tx.tx.getDebitsList();
 
-    var date = dateFormat(new Date(tx.timestamp*1000), "mmm d yyyy, HH:MM:ss");
+    var date = formatTxDate(this.props.intl, new Date(tx.timestamp*1000));
     var fee = tx.tx.getFee();
 
     var txAmount = 0;
@@ -170,4 +171,4 @@ class TxDetails extends Component {
   }
 }
 
-export default Radium(TxDetails);
+export default injectIntl(Radium(TxDetails));

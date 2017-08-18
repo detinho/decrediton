@@ -157,6 +157,7 @@
     "mocha": "^3.1.2",
     "radium": "^0.18.1",
     "react-addons-test-utils": "^15.3.2",
+    "react-intl": "^2.3.0",
     "react-tap-event-plugin": "^2.0.1",
     "redux-logger": "^2.7.4",
     "sinon": "^1.17.6",

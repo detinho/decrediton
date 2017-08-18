@@ -57,3 +57,13 @@ export function timeBackString(days) {
   }
   return days + " days back";
 }
+
+export function formatTxDate(intl, date) {
+  return intl.formatDate(date, {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"});
+}

@@ -12,6 +12,7 @@ import Header from "../Header";
 import "../fonts.css";
 import { HomeStyles } from "./ViewStyles";
 import ReactToolTip from "react-tooltip";
+import { FormattedMessage, injectIntl, defineMessages } from "react-intl";
 
 class Home extends Component{
   constructor(props) {
@@ -38,6 +39,12 @@ class Home extends Component{
     const { getAccountsResponse } = this.props;
     const { synced } = this.props;
     const { unmined } = this.props;
+    const messages = defineMessages({
+      available_balance: {
+        id: "available_balance",
+        defaultMessage: "Available Balance"
+      }
+    })
 
     var transactionMessage = "";
     if (regularTransactionsInfo.length == 0) {
@@ -86,12 +93,14 @@ class Home extends Component{
                 </div> :
                 <div key="notSynced" ></div>
             }
-            headerTitleOverview="Available Balance"
+            headerTitleOverview={this.props.intl.formatMessage(messages.available_balance)}
             headerMetaOverview={
               <div>
                 <Balance amount={totalBalance} />
                 <div style={HomeStyles.rescanButtonArea} data-tip="Rescanning the blockchain may resolve some balance errors.">
-                  <KeyBlueButton onClick={() => this.props.rescanAttempt(0)}>Rescan</KeyBlueButton>
+                  <KeyBlueButton onClick={() => this.props.rescanAttempt(0)}>
+                    <FormattedMessage id="rescan" defaultMessage="Rescan" />
+                  </KeyBlueButton>
                 </div>
               </div>
             }
@@ -100,7 +109,9 @@ class Home extends Component{
         {!getTransactionsRequestAttempt ?
           <div style={HomeStyles.content}>
             <div style={HomeStyles.contentTitle}>
-              <div style={HomeStyles.contentTitleText}>Recent Transactions</div>
+              <div style={HomeStyles.contentTitleText}>
+                <FormattedMessage id="recent_transactions" defaultMessage="Recent Transactions" />
+              </div>
             </div>
             <div style={HomeStyles.contentNest}>
               {paginatedTxs.length > 0 || unmined.length > 0 ?
@@ -128,7 +139,7 @@ class Home extends Component{
   }
 }
 
-export default Home;
+export default injectIntl(Home);
 
 
 /*

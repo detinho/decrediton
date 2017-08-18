@@ -13,6 +13,7 @@ class Settings extends Component{
     walletService: PropTypes.object,
     currencyDisplay: PropTypes.string,
     network: PropTypes.string,
+    locale: PropTypes.string
   };
   constructor(props) {
     super(props);
@@ -40,6 +41,7 @@ class Settings extends Component{
     var settings = {
       currencyDisplay: tempSettings.currencyDisplay,
       network: tempSettings.network,
+      locale: tempSettings.locale
     };
     const settingsView = (
       <div style={SettingStyles.view}>
@@ -92,6 +94,23 @@ class Settings extends Component{
                   }}>
                   <option style={SettingStyles.settingsInputSelectOption} value="mainnet">mainnet</option>
                   <option style={SettingStyles.settingsInputSelectOption} value="testnet">testnet</option>
+                </select>
+              </div>
+            </div>
+            <div style={SettingStyles.settingsRow}>
+              <div style={SettingStyles.settingsLabel}>
+                Language
+              </div>
+              <div style={SettingStyles.settingsInput}>
+                <select
+                  style={SettingStyles.settingsInputSelect}
+                  defaultValue={currentSettings.locale}
+                  onChange={(e) => {
+                    settings.locale = e.target.value;
+                    updateStateSettingsChanged(settings);
+                  }}>
+                  <option style={SettingStyles.settingsInputSelectOption} value="en-us">English (US)</option>
+                  <option style={SettingStyles.settingsInputSelectOption} value="pt-br">Português (Brasil)</option>
                 </select>
               </div>
             </div>

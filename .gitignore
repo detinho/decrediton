@@ -11,3 +11,5 @@ bin/
 .DS_Store
 .vagrant
 dist/
+package-lock.json
+app/package-lock.json

@@ -125,6 +125,9 @@ export function getCfg(update) {
       config.set("stakepools", foundStakePoolConfigs);
     });
   }
+  if (!config.has("locale")) {
+    config.set("locale","en-us");
+  }
   return(config);
 }
 

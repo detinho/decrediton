@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react";
+import { injectIntl } from "react-intl";
 import History from "./History";
 
 class TxHistory extends Component {
@@ -7,7 +8,8 @@ class TxHistory extends Component {
     const { showTxDetail } = this.props;
     const unmined = this.flattenTxs(this.props.unmined);
     const mined = this.flattenTxs(this.props.mined);
-    return <History {...{ showTxDetail, unmined, mined }} />;
+    const intl = this.props.intl;
+    return <History {...{ showTxDetail, unmined, mined, intl }} />;
   }
 
   flattenTxs(txs = []) {
@@ -70,4 +72,4 @@ class TxHistory extends Component {
   }
 }
 
-export default TxHistory;
+export default injectIntl(TxHistory);
